@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@500;900&display=swap');
+
+
+@keyframes close_cookie_attention {
+  75% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-500px);
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Unbounded", sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+p {
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: "Dela Gothic One", sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+
+.cookie-attention {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  padding: 15px;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 15px;
+  z-index: 11;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  animation: close_cookie_attention 4s;
+}
+
+.cookie-attention img {
+  background: #dddddd;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+
+.num {
+  color: gray;
+  margin-top: 5px;
+  font-size: 10px;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+
+header {
+  width: calc(100vw - 40px);
+  position: fixed;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(20px);
+  z-index: 10;
+}
+
+header a {
+  height: 50px;
+}
+
+header .logo {
+  width: 50px;
+  height: 50px;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main section {
+  width: 100%;
+  z-index: 1;
+}
+
+main section.inset {
+  width: calc(100% - 120px);
+  border-radius: 50px;
+}
+
+main section.light {
+  background: white;
+  color: black;
+}
+
+main section.dark {
+  background: black;
+  color: white;
+}
+
+main section .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main section .header p {
+  text-transform: uppercase;
+}
+
+
+main section.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: calc(100vh + 50px);
+  background-size: cover;
+  background-position: center center;
+  background-image: url("../img/banner/cover.png");
+  color: white;
+}
+
+main section.cover img {
+  height: 150px;
+}
+
+main section.cover h1 {
+  color: #ff24fb;
+  padding: 5px 15px;
+  font-size: 50px;
+  backdrop-filter: blur(20px);
+  letter-spacing: 1px;
+  border-radius: 15px;
+}
+
+main section.cover p {
+  padding: 0 15px;
+}
+
+
+main section.connect {
+  margin-top: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+main section.connect .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  text-align: left;
+}
+
+main section.connect .ip-icon {
+  font-size: 250px;
+  color: #dddddd;
+}
+
+main section.connect .right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+main section.connect .version {
+  width: max-content;
+  padding: 5px 10px;
+  background: #ff24fb;
+  color: black;
+  border-radius: 10px;
+}
+
+main section.connect .ip {
+  color: #ff24fb;
+}
+
+main section.connect .tip {
+  font-size: 10px;
+  color: gray;
+}
+
+main section.connect button {
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 15px;
+  background: #ff24fb;
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+
+main section.best-players {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+main section.best-players .content {
+  padding: 100px 0 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+main section.best-players h1 {
+  font-size: 50px;
+  color: #ff24fb;
+}
+
+main section.best-players .row {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+main section.best-players .figure {
+  width: 150px;
+  height: 150px;
+  z-index: 9;
+}
+
+main section.best-players .figure.cross {
+  rotate: 30deg;
+}
+
+main section.best-players .figure.circle {
+  align-self: center;
+}
+
+main section.best-players .player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+  background: #ff24fb;
+  color: black;
+  border-radius: 25px;
+}
+
+main section.best-players .player img {
+  width: 250px;
+  border-radius: 15px;
+}
+
+
+main section.cookie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main section.cookie .content {
+  padding: 100px 0 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+main section.cookie .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+main section.cookie .header p {
+  color: #ff24fb;
+}
+
+main section.cookie h1 {
+  font-size: 50px;
+}
+
+main section.cookie img {
+  width: 250px;
+}
+
+main section.cookie .container .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+main section.cookie .container .rate {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+main section.cookie p img {
+  width: 20px;
+  height: 20px;
+}
+
+
+footer {
+  margin-top: -50px;
+  width: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  z-index: 1;
+}
+
+footer .content {
+  width: calc(100% - 100px);
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer img {
+  padding: 15px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #ff24fb;
+  border-radius: 50px;
+}
+
+footer .socials {
+  display: flex;
+  gap: 15px;
+}
+
+footer .socials .social {
+  width: 50px;
+  height: 50px;
+  background: #ff24fb;
+  color: black;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+footer .socials .social i {
+  height: 20px;
+}
