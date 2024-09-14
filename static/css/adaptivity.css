@@ -1,22 +1,46 @@
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
+  header .right {
+    display: none;
+  }
+
+  main section.cover h1 {
+    font-size: 40px;
+  }
+
+  main section.cover .socials .social {
+    font-size: 30px;
+  }
+
   main section.connect .content {
     flex-direction: column;
     gap: 0;
     padding-bottom: 100px;
   }
 
-  main section.best-players {
+  main section.inset {
     width: 100%;
-  }
-
-  main section.best-players .figure {
-    display: none;
   }
 
   footer .content {
     padding: 15px;
     width: calc(100% - 30px);
+  }
+
+
+  main section.sale .content {
+    flex-direction: column;
+    padding: 50px;
+  }
+
+  main .sale .text {
+    width: auto;
+    height: auto;
+    align-items: center;
+  }
+
+  main .mini-shop .container {
+    padding: 0 10px;
   }
 }
 

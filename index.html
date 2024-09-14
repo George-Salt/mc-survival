@@ -5,12 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
 
-  <title>GSXLT</title>
+  <title>GSXLT Minecraft</title>
 
   <link rel="shortcut icon" href="static/img/logo.png">
 
   <link href="https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css" rel="stylesheet">
 
+  <link href="static/css/minecraft.css" rel="stylesheet">
+
+  <link href="static/css/header.css" rel="stylesheet">
   <link href="static/css/main.css" rel="stylesheet">
   <link href="static/css/adaptivity.css" rel="stylesheet">
 </head>
@@ -22,17 +25,74 @@
   </div>
 
   <header>
-    <a href=""><img class="logo" src="static/img/logo.png"></a>
+    <div class="left">
+      <a class="main" href="">GSXLT</a>
+    </div>
+    
+    <div class="center">
+      <a class="chapter" href="">#mc</a>
+    </div>
+
+    <div class="right"></div>
   </header>
 
   <main>
     <section class="cover">
-      <img src="static/img/logo.png">
-      <h1>GSXLT</h1>
-      <p>Мы не знаем, как играть... Никто не знает, даже Нотч.</p>
+      <h1 class="tag">#minecraft</h1>
+      
+      <p>Поговаривают, что в этом мире есть не только кубики...</p>
+
+      <div class="socials">
+        <a class="social" href="https://t.me/gsxlt_avatar_chat" target="_blank"><i class="fi fi-brands-telegram"></i></a>
+        <a class="social" href="https://discord.gg/G7eDTaWMAr" target="_blank"><i class="fi fi-brands-discord"></i></a>
+      </div>
     </section>
 
-    <section class="connect light">
+    <section class="blog full light">
+      <div class="num">SECTION 2</div>
+
+      <div class="content">
+        <div class="header">
+          <p>Блог</p>
+          <h1>Новые статьи</h1>
+        </div>
+
+        <div class="container">
+          <div class="articles">
+            <a class="article lightsalmon" href="">
+              <div class="upside"><p class="tag">#secrets</p>↗</div>
+
+              <div class="info">
+                <h2>Коды цветов</h2>
+                <p>Хотите раскрасить свой ник, добавить акцента к сообщению в чате? Используйте эти небольшие секреты!</p>
+              </div>
+            </a>
+
+            <a class="article primary" href="">
+              <div class="upside"><p class="tag">#plugins</p>↗</div>
+
+              <div class="info">
+                <h2>EssentialsX</h2>
+                <p>Мало обычного выживания? Добавьте экономику, привилегии, приваты и еще 100+ команд на свой сервер!</p>
+              </div>
+            </a>
+
+            <a class="article lightskyblue" href="">
+              <div class="upside"><p class="tag">#secrets</p>↗</div>
+
+              <div class="info">
+                <h2>Коды цветов</h2>
+                <p>Хотите раскрасить свой ник, добавить акцента к сообщению в чате? Используйте эти небольшие секреты!</p>
+              </div>
+            </a>
+          </div>
+
+          <a href="" class="button">Все посты<span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="connect light">
       <div class="num">SECTION 2</div>
 
       <div class="content">
@@ -51,31 +111,40 @@
             <p class="tip">*только для Java Edition</p>
           </div>
 
-          <button>Инструкция</button>
+          <a href="" class="button">Инструкция</a>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="best-players full dark inset">
+    <section class="leader full dark inset">
       <div class="num">SECTION 3</div>
 
       <div class="content">
         <div class="header">
-          <p>Создатель</p>
-          <h1>Лидер команды</h1>
+          <p>Поиграем?</p>
+          <h1>Сервера</h1>
         </div>
 
-        <div class="row">
-          <img class="figure cross" src="static/img/figure/cross.png">
+        <div class="container">
+          <div class="wrap">
+            <div class="sbox blue">
+              <div class="upside"><p class="tag">1.19.2</p></div>
 
-          <div class="player">
-            <img src="static/img/player/george20097.png">
+              <div class="info">
+                <h2>Lands</h2>
+                <p>Выживание, острова, экономика.<br>IP: <b>gsxlt_lands.aternos.me:30788</b></p>
+              </div>
+            </div>
 
-            <h2>george20097</h2>
-            <p>Автор, модератор, игрок</p>
+            <div class="sbox pink">
+              <div class="upside"><p class="tag">1.19.2</p></div>
+
+              <div class="info">
+                <h2>Misery (в разраб.)</h2>
+                <p>Гриферское выживание без правил.<br>IP: <b>сервер в процессе создания</b></p>
+              </div>
+            </div>
           </div>
-
-          <img class="figure circle" src="static/img/figure/circle.png">
         </div>
       </div>
     </section>
@@ -90,7 +159,7 @@
         </div>
 
         <div class="container">
-          <a href=""><img src="static/img/item/cookie.png"></a>
+          <a href="shop"><img src="static/img/item/cookie.png"></a>
 
           <div class="text">
             <p>Печеньки можно обменять на ресурсы и наборы. Например,</p>
@@ -102,19 +171,32 @@
       </div>
     </section>
 
-    <footer>
-      <div class="num">FOOTER</div>
-
+    <section class="discord full">
       <div class="content">
-        <p>© GSXLT, 2024</p>
+        <div class="header">
+          <p>Го к нам!</p>
+          <h1>Discord</h1>
+        </div>
 
-        <div class="socials">
-          <a class="social" href="https://t.me/gsxlt_avatar_chat" target="_blank"><i class="fi fi-brands-telegram"></i></a>
-          <a class="social" href="https://discord.gg/G7eDTaWMAr" target="_blank"><i class="fi fi-brands-discord"></i></a>
+        <div class="container">
+          <a href="https://discord.gg/G7eDTaWMAr" class="button contrast" target="_blank">На сервер<span>↗</span></a>
         </div>
       </div>
-    </footer>
+    </section>
   </main>
+
+  <footer>
+    <div class="num">FOOTER</div>
+
+    <div class="content">
+      <p>© GSXLT, 2024</p>
+
+      <div class="socials">
+        <a class="social" href="https://t.me/gsxlt_avatar_chat" target="_blank"><i class="fi fi-brands-telegram"></i></a>
+        <a class="social" href="https://discord.gg/G7eDTaWMAr" target="_blank"><i class="fi fi-brands-discord"></i></a>
+      </div>
+    </div>
+  </footer>
 
   <script>
     let cookieAttention = document.querySelector(".cookie-attention");

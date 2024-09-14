@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Unbounded:wght@500;900&display=swap');
+@font-face {
+  font-family: "Monument Extended Bold";
+  src:
+    url("../font/Monument Extended/Monument\ Extended\ Ultrabold\ 800.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Loos Ext Black";
+  src:
+    url("../font/Loos/extended/black.otf");
+  font-weight: 900;
+}
 
 
 @keyframes close_cookie_attention {
@@ -12,6 +25,18 @@
 }
 
 
+:root {
+  --secondary-color: #bb00ff;
+
+  --color-orange: lightsalmon;
+  --color-green: #00ff88;
+  --color-blue: lightskyblue;
+  --color-pink: pink;
+
+  --minecraft-color: var(--color-green);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -20,24 +45,36 @@
 body {
   font-family: "Unbounded", sans-serif;
   text-align: center;
+  background: #eeeeee;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Dela Gothic One", sans-serif;
-}
+h1, h2, h3, h4, h5, h6 {}
 
 p {
+  max-width: 95vw;
   font-size: 15px;
 }
 
+p img {
+  width: 20px;
+  height: 20px;
+}
+
 a {
+  color: black;
   text-decoration: none;
 }
 
 button {
-  font-family: "Dela Gothic One", sans-serif;
   border: none;
   cursor: pointer;
+}
+
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 
@@ -55,44 +92,127 @@ button {
   z-index: 11;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   animation: close_cookie_attention 4s;
+
+  display: none;
 }
 
 .cookie-attention img {
-  background: #dddddd;
   padding: 10px;
   width: 30px;
   height: 30px;
+  background: #dddddd;
   border-radius: 5px;
 }
 
 
 .num {
-  color: gray;
   margin-top: 5px;
+  color: gray;
   font-size: 10px;
-  font-family: "Dela Gothic One", sans-serif;
+  font-family: "Loos Ext Black", sans-serif;
 }
 
 
-header {
-  width: calc(100vw - 40px);
-  position: fixed;
-  padding: 10px 15px;
+.button {
+  margin-top: 5px;
+  padding: 15px;
+  width: fit-content;
+  height: 15px;
+  font-size: 15px;
+  font-family: "Loos Ext Black", sans-serif;
+  text-transform: uppercase;
+  background: #dddddd;
   display: flex;
-  align-items: center;
+  gap: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: gap 0.3s;
+}
+
+.button.contrast {
+  background: white;
+  border: 2px solid black;
+}
+
+.button:hover {
+  gap: 25px;
+}
+
+.button span {
+  font-family: "Monument Extended Bold";
+}
+
+
+.sbox {
+  padding: 15px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  backdrop-filter: blur(20px);
-  z-index: 10;
+  gap: 15px;
+  text-align: left;
+  background: lightskyblue;
+  color: black;
+  box-shadow: 5px 5px 0 white;
 }
 
-header a {
-  height: 50px;
+.sbox.orange {
+  background: var(--color-orange);
 }
 
-header .logo {
-  width: 50px;
-  height: 50px;
+.sbox.orange .upside .tag {
+  color: var(--color-orange);
 }
+
+.sbox.green {
+  background: var(--color-green);
+}
+
+.sbox.green .upside .tag {
+  color: var(--color-green);
+}
+
+.sbox.blue {
+  background: var(--color-blue);
+}
+
+.sbox.blue .upside .tag {
+  color: var(--color-blue);
+}
+
+.sbox.pink {
+  background: var(--color-pink);
+}
+
+.sbox.pink .upside .tag {
+  color: var(--color-pink);
+}
+
+.sbox .upside {
+  font-size: 20px;
+  font-family: "Monument Extended Bold", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sbox .upside .tag {
+  padding: 5px 10px;
+  background: black;
+  color: lightskyblue;
+  border-radius: 15px;
+  font-family: "Loos Ext Black", sans-serif;
+}
+
+.sbox .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sbox p {
+  font-size: 12px;
+}
+
 
 
 main {
@@ -106,19 +226,47 @@ main section {
   z-index: 1;
 }
 
+main section:first-child {
+  height: 100vh;
+}
+
+main section.full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 main section.inset {
   width: calc(100% - 120px);
   border-radius: 50px;
 }
 
 main section.light {
-  background: white;
+  background: #eeeeee;
   color: black;
 }
 
 main section.dark {
   background: black;
   color: white;
+}
+
+main section.full .content {
+  padding: 100px 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+main section.full .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 
 main section .header {
@@ -131,6 +279,18 @@ main section .header p {
   text-transform: uppercase;
 }
 
+main section.light .header p {
+  color: var(--secondary-color);
+}
+
+main section.full .header h1 {
+  font-size: 50px;
+}
+
+main section.full.dark .header h1 {
+  color: var(--primary-color);
+}
+
 
 main section.cover {
   display: flex;
@@ -138,33 +298,107 @@ main section.cover {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  height: calc(100vh + 50px);
-  background-size: cover;
-  background-position: center center;
-  background-image: url("../img/banner/cover.png");
-  color: white;
-}
-
-main section.cover img {
-  height: 150px;
+  background: white;
+  color: black;
 }
 
 main section.cover h1 {
-  color: #ff24fb;
-  padding: 5px 15px;
-  font-size: 50px;
-  backdrop-filter: blur(20px);
-  letter-spacing: 1px;
-  border-radius: 15px;
+  font-family: "Monument Extended Bold", sans-serif;
+  color: var(--primary-color);
+  font-size: 100px;
+  letter-spacing: 2px;
+
 }
 
-main section.cover p {
-  padding: 0 15px;
+main section.cover .socials {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+main section.cover .socials .social {
+  color: black;
+  font-size: 40px;
+}
+
+
+main section.blog .articles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+main section.blog .article {
+  padding: 15px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  color: black;
+  box-shadow: 5px 5px 0 black;
+}
+
+
+main section.blog .article.lightsalmon {
+  background: lightsalmon;
+}
+main section.blog .article.lightsalmon .upside .tag {
+  color: lightsalmon;
+}
+
+main section.blog .article.primary {
+  background: var(--primary-color);
+}
+main section.blog .article.primary .upside .tag {
+  color: var(--primary-color);
+}
+
+main section.blog .article.lightskyblue {
+  background: lightskyblue;
+}
+main section.blog .article.lightskyblue .upside .tag {
+  color: lightskyblue;
+}
+
+main section.blog .article.pink {
+  background: pink;
+}
+main section.blog .article.pink .upside .tag {
+  color: pink;
+}
+
+
+main section.blog .article .upside {
+  font-size: 20px;
+  font-family: "Monument Extended Bold", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+main section.blog .article .upside .tag {
+  padding: 5px 10px;
+  background: black;
+  color: var(--primary-color);
+  border-radius: 15px;
+  font-family: "Loos Ext Black", sans-serif;
+}
+
+main section.blog .article .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+main section.blog .article p {
+  font-size: 12px;
 }
 
 
 main section.connect {
-  margin-top: -50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,6 +407,7 @@ main section.connect {
 }
 
 main section.connect .content {
+  padding-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,13 +429,13 @@ main section.connect .right {
 main section.connect .version {
   width: max-content;
   padding: 5px 10px;
-  background: #ff24fb;
-  color: black;
+  background: var(--secondary-color);
+  color: #eeeeee;
   border-radius: 10px;
 }
 
 main section.connect .ip {
-  color: #ff24fb;
+  color: var(--secondary-color);
 }
 
 main section.connect .tip {
@@ -208,97 +443,17 @@ main section.connect .tip {
   color: gray;
 }
 
-main section.connect button {
-  text-transform: uppercase;
-  margin-top: 5px;
-  font-size: 15px;
-  background: #ff24fb;
-  padding: 10px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-}
 
-
-main section.best-players {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+main section.leader .wrap {
   gap: 50px;
 }
 
-main section.best-players .content {
-  padding: 100px 0 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
-
-main section.best-players h1 {
-  font-size: 50px;
-  color: #ff24fb;
-}
-
-main section.best-players .row {
+main section.leader .row {
   display: flex;
   justify-content: center;
   gap: 50px;
 }
 
-main section.best-players .figure {
-  width: 150px;
-  height: 150px;
-  z-index: 9;
-}
-
-main section.best-players .figure.cross {
-  rotate: 30deg;
-}
-
-main section.best-players .figure.circle {
-  align-self: center;
-}
-
-main section.best-players .player {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  padding: 15px;
-  background: #ff24fb;
-  color: black;
-  border-radius: 25px;
-}
-
-main section.best-players .player img {
-  width: 250px;
-  border-radius: 15px;
-}
-
-
-main section.cookie {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-main section.cookie .content {
-  padding: 100px 0 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
 
 main section.cookie .container {
   display: flex;
@@ -308,15 +463,11 @@ main section.cookie .container {
   gap: 50px;
 }
 
-main section.cookie .header p {
-  color: #ff24fb;
-}
-
 main section.cookie h1 {
   font-size: 50px;
 }
 
-main section.cookie img {
+main section.cookie .content .container > img {
   width: 250px;
 }
 
@@ -334,14 +485,20 @@ main section.cookie .container .rate {
   gap: 5px;
 }
 
-main section.cookie p img {
-  width: 20px;
-  height: 20px;
+
+main section.discord {
+  background: var(--secondary-color);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+main section.discord .content {
+  padding: 50px;
+  gap: 15px;
 }
 
 
 footer {
-  margin-top: -50px;
   width: 100%;
   background: black;
   color: white;
@@ -349,10 +506,6 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  z-index: 1;
 }
 
 footer .content {
@@ -378,16 +531,148 @@ footer .socials {
 footer .socials .social {
   width: 50px;
   height: 50px;
-  background: #ff24fb;
+  background: var(--minecraft-color);
   color: black;
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
+  box-shadow: 5px 5px 0 white;
   cursor: pointer;
 }
 
 footer .socials .social i {
   height: 20px;
+}
+
+
+main .sale .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+main .sale img,
+main .sale .text {
+  width: 250px;
+  height: 250px;
+}
+
+main .sale .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  text-align: left;
+}
+
+main .sale h1 {
+  font-family: "Unbounded", sans-serif;
+  color: #ff24fb;
+}
+
+main .sale .price {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+main .sale .old-price {
+  font-size: 15px;
+  text-decoration: line-through;
+  color: gray;
+  align-self: flex-start;
+  margin-left: 10px;
+}
+
+main .sale .price img {
+  width: 30px;
+  height: 30px;
+}
+
+
+main .shop .items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 0 50px;
+}
+
+main .shop .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+main .shop .item > img {
+  width: 250px;
+  height: 250px;
+}
+
+main .shop .item p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+main .shop .item .price .sale {
+  color: #ff24fb;
+  font-weight: 900;
+}
+
+main .shop .item .price .old-price {
+  font-size: 10px;
+  text-decoration: line-through;
+  align-self: flex-start;
+}
+
+
+main .mini-shop .items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 0 50px;
+}
+
+main .mini-shop .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+main .mini-shop .item > img {
+  width: 150px;
+  height: 150px;
+}
+
+main .mini-shop .item h2 {
+  font-size: 20px;
+  font-family: "Unbounded", sans-serif;
+}
+
+main .mini-shop .item p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+main .mini-shop .item .price .sale {
+  color: #ff24fb;
+  font-weight: 900;
+}
+
+main .mini-shop .item .price .old-price {
+  font-size: 10px;
+  text-decoration: line-through;
+  align-self: flex-start;
+}
+
+main .mini-shop .item .price {
+  font-weight: 900;
 }
